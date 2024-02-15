@@ -6,8 +6,10 @@
 # Projeto - To-do App
 
 ### Repositório para o projeto de um site de gerenciamento de tarefas simples.
+<sub>Repositório original: [qsd-ada-logica/todo-app](https://github.com/tamigld/qsd-ada-logica/tree/main/todo-app)</sub> <br>
+<sub>Criei o repositório atual apenas para entrega separada do projeto.</sub>
 
-_Não era necessário manipulação de DOM, mas fiz para praticar nesse tempo de elaboração._
+<sub>_Não era necessário manipulação de DOM, mas fiz para praticar nesse tempo de elaboração._</sub>
 
 ![taskflow1](https://github.com/tamigld/qsd-ada-projeto-frontend/assets/127408948/def4af40-2dcd-4b24-9837-033195bc5020)
 <sub>Tela inicial</sub>
