@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--montserrat);
+    color: var(--preto);
+}
+
+:root {
+    --montserrat: 'Montserrat', 'sans-serif';
+    --montserratS: 'Montserrat Subrayada', 'sans-serif';
+    --branco: #fff;
+    --preto: #000;
+    --rosa: #ff6bc1;
+    --platinum: #E4E4E4;
+    --verde: #48FF70;
+    --amarelo: #FFC24C;
+    --vermelho: #FF3F25;
+}
+
+body {
+    background: #ECECEC;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 60px;
+    background-color: var(--rosa);
+    border-top: 1px solid var(--branco);
+    backdrop-filter: blur(5px);
+}
+
+header p {
+    font-family: var(--montserratS);
+    font-size: 18px;
+    color: var(--branco);
+}
+
+main {
+    height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 30px;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    gap: 15px;
+}
+
+.container-list {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card {
+    background-color: rgb(255, 255, 255, 0.5);
+    backdrop-filter: blur(4px);
+    border: solid 1px rgb(255, 255, 255, 0.5);
+    box-shadow: 0px 0px 19px -7px rgba(0, 0, 0, 0.08);
+    width: fit-content;
+    padding: 20px;
+    border-radius: 25px;
+}
+
+.btn-def {
+    transition: ease all 0.2s;
+    cursor: pointer;
+    background-color: var(--rosa);
+    color: var(--branco);
+    border: none;
+    padding: 8px 18px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: small;
+    border-radius: 20px;
+}
+
+.btn-def:hover {
+    opacity: 0.5;
+}
+
+.btn-def:active {
+    scale: 0.8;
+}
+
+.btn-edit {
+    background-color: #ffea2b;
+    color: var(--preto);
+}
+
+.btn-del {
+    background-color: #FF3F25;
+}
+
+.addTask {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 10px;
+}
+
+.formGroup {
+    display: flex;
+    gap: 5px;
+    width: 100%;
+    flex-direction: column;
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+}
+
+.inputText {
+    transition: ease all 0.3s;
+    color: var(--preto);
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid var(--rosa);
+
+    padding: 5px 10px;
+}
+
+.label-title {
+    transition: ease all 0.2s;
+    position: absolute;
+    left: 30px;
+    transform: translateY(-18px);
+}
+
+.inputText:placeholder-shown+.label-title {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(5px);
+}
+
+.headerTasks,
+.greetings,
+.table-container {
+    width: 100%;
+}
+
+.img-search {
+    position: absolute;
+    right: 25px;
+    top: 5px;
+    width: 15px;
+}
+
+.label-search {
+    font-size: small;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    transition: ease all 0.2s;
+    transform: translateX(-70px);
+}
+
+.search {
+    width: 50px;
+}
+
+.inputText:placeholder-shown+.label-search {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(5px);
+}
+
+.headerTasks {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-p {
+    transition: ease all 0.2s;
+    cursor: pointer;
+    color: var(--preto);
+    width: 32%;
+    text-align: center;
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 20px;
+    border: 2px solid transparent;
+}
+
+.btn-p:active {
+    scale: 0.9;
+}
+
+.btn-p:hover {
+    scale: 1.08;
+}
+
+.p-low {
+    border: solid 2px var(--verde);
+    background-color: transparent;
+}
+
+.p-low:checked+label {
+    background-color: var(--verde);
+}
+
+.p-medium {
+    border: solid 2px var(--amarelo);
+    background-color: transparent;
+}
+
+.p-medium:checked+label {
+    background-color: var(--amarelo);
+}
+
+.p-high {
+    border: solid 2px var(--vermelho);
+    background-color: transparent;
+}
+
+.p-high:checked+label {
+    background-color: var(--vermelho);
+    color: var(--branco);
+}
+
+.p-div:hover :not(:hover) {
+    opacity: 0.3;
+}
+
+input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+/* css table */
+.table-container {
+    border-radius: 25px 0 0 25px;
+    border: solid 1px var(--rosa);
+    height: 65vh;
+    overflow-y: scroll;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+}
+
+tr,
+td,
+th {
+    padding: 5px;
+    border-bottom: 1px solid rgba(219, 124, 203, 0.2);
+}
+
+.td-title,
+.td-desc{
+    max-width: 250px;
+    width: 200px;
+    word-wrap: break-word;
+}
+
+/* animations */
+
+.text-shadow-drop-center {
+    -webkit-animation: text-shadow-drop-center 1s infinite alternate both;
+    animation: text-shadow-drop-center 1s infinite alternate both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2024-2-7 22:54:42
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * @animation text-shadow-drop-center
+ * ----------------------------------------
+ */
+@-webkit-keyframes text-shadow-drop-center {
+    0% {
+        text-shadow: 0 0 0 rgba(0, 99, 138, 0);
+    }
+
+    100% {
+        text-shadow: 0 0 12px rgba(212, 0, 0);
+    }
+}
+
+@keyframes text-shadow-drop-center {
+    0% {
+        text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        text-shadow: 0 0 12px rgba(212, 0, 0);
+    }
+}
+
+#modalGroup{
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    background-color: rgb(0, 0, 0, 0.5);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    z-index: 1;
+}
+
+#modal{
+    position: relative;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 30px;
+    width: 40%;
+    background-color: var(--branco);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.closeIcon{
+    transition: ease-in all 0.1s;
+    cursor: pointer;
+    font-size: 30px;
+    color: var(--vermelho);
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.closeIcon:hover{
+    opacity: 0.8;
+}
+
+.closeIcon:active{
+    scale: 0.9;
+}
+
+#modalGroup-descricao{
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    background-color: rgb(0, 0, 0, 0.5);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    z-index: 1;
+}
+
+#modal-descricao{
+    position: relative;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 30px;
+    width: 40%;
+    background-color: var(--branco);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

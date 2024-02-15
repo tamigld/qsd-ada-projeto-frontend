@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow</title>
+    <script defer src="./script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./img/favicon-tf.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/121ad576a7.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- MODAL -->
+    <section id="modalGroup">
+        <div id="modal">
+            <i onclick=closeModal() class="closeIcon fa-solid fa-circle-xmark"></i>
+            <div>
+                <label for="newTitle">Novo título:</label>
+                <input class="inputText" type="text" name="newTitle" id="newTitle" placeholder="Novo título *" required>
+            </div>
+
+            <div class="formGroup" style="user-select: none;">
+                <p>Nova prioridade</p>
+                <div class="p-div" style="display: flex; justify-content: space-between;">
+                    <input class="p-low" type="radio" name="newPriority" id="newLow" value="Baixa" required>
+                    <label class="btn-p p-low" for="newLow">Baixa</label>
+
+                    <input class="p-medium" type="radio" name="newPriority" id="newMedium" value="Média" required>
+                    <label class="btn-p p-medium" for="newMedium">Média</label>
+
+                    <input class="p-high" type="radio" name="newPriority" id="newHigh" value="Alta" required>
+                    <label class="btn-p p-high" for="newHigh">Alta</label>
+                </div>
+            </div>
+
+            <div class="formGroup">
+                <textarea class="inputText" name="newDescricao" id="newDescricao" cols="30" rows="10"
+                    placeholder="Nova descrição"></textarea>
+                <label for="newDescricao">Nova descrição</label>
+            </div>
+
+            <div id="button-modal">
+                <!-- <button onclick=atualizarTarefa() class="btn-def" type="button">Salvar</button> -->
+            </div>
+        </div>
+    </section>
+
+    <section id="modalGroup-descricao">
+        <div id="modal-descricao">
+            <i onclick=closeModal() class="closeIcon fa-solid fa-circle-xmark"></i>
+            <div id="textoDescricao">
+
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <div class="card greetings" style="background-color: var(--rosa); text-align: center;">
+            <p style="color: var(--branco);">Bem vindo ao <span
+                    style="font-family: var(--montserratS); color: var(--branco);">TaskFlow</span>!<br>
+                Seu gerenciador de tarefas fácil. </p>
+        </div>
+        <section class="container">
+            <form class="addTask card">
+                <h3>Adicionar tarefa</h3>
+                <small id="message-error" class="text-shadow-drop-center" style="color: var(--vermelho);"></small>
+                <div class="formGroup">
+                    <input class="inputText" type="text" name="title" id="title" placeholder="Título *" required>
+                    <label for="title" class="label-title">Título</label>
+                </div>
+                <div class="formGroup" style="user-select: none;">
+                    <p>Prioridade</p>
+                    <div class="p-div" style="display: flex; justify-content: space-between;">
+                        <input class="p-low" type="radio" name="priority" id="low" value="Baixa" required>
+                        <label class="btn-p p-low" for="low">Baixa</label>
+
+                        <input class="p-medium" type="radio" name="priority" id="medium" value="Média" required>
+                        <label class="btn-p p-medium" for="medium">Média</label>
+
+                        <input class="p-high" type="radio" name="priority" id="high" value="Alta" required>
+                        <label class="btn-p p-high" for="high">Alta</label>
+                    </div>
+                </div>
+                <div class="formGroup">
+                    <textarea class="inputText" name="descricao" id="descricao" cols="30" rows="10"
+                        placeholder="Descrição"></textarea>
+                    <label for="descricao">Descrição</label>
+                </div>
+                <button id="btn-addtask" type="button" onclick=adicionarTarefa() class="btn-def">Adicionar</button>
+            </form>
+            <div class="container-list">
+                <div class="headerTasks card"">
+                    <h2>Lista de tarefas</h2>
+                    </label>
+                </div>
+                <section class="table-container card">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Título</th>
+                                <th>Prioridade</th>
+                                <th>Descrição</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+                            <td id="message" colspan="4"></td>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
